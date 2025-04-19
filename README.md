@@ -18,7 +18,7 @@ Dev Logger AI is a lightweight CLI tool that watches your Git development activi
 
 - **Node.js** v14 or newer
 - A **Git** repository with at least two commits
-- A **Gemini API key** (GPT-3.5 or GPT-4)
+- A **Gemini API key**
 
 ---
 
