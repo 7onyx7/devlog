@@ -1,13 +1,13 @@
 # devlog
 
-Dev Logger AI is a lightweight CLI tool that watches your Git development activity and automatically generates human-readable summaries using OpenAI’s API. It helps you maintain a daily development log, draft clear stand-up updates, and track your coding progress effortlessly.
+Dev Logger AI is a lightweight CLI tool that watches your Git development activity and automatically generates human-readable summaries using Gemini’s API. It helps you maintain a daily development log, draft clear stand-up updates, and track your coding progress effortlessly.
 
 ---
 
 ## Features
 
 - **Git Diff Watching:** Captures the latest code changes via Git diffs.
-- **AI Summarization:** Sends diffs to OpenAI and produces concise, natural-language summaries.
+- **AI Summarization:** Sends diffs to Gemini and produces concise, natural-language summaries.
 - **Daily Log Creation:** Appends summaries to dated Markdown files in the `devlog/` directory.
 - **Modular Design:** Clear separation of concerns with dedicated modules for Git reading, AI integration, and file writing.
 - **Extensible Architecture:** Easily add new data sources or custom summarization prompts.
@@ -18,7 +18,7 @@ Dev Logger AI is a lightweight CLI tool that watches your Git development activi
 
 - **Node.js** v14 or newer
 - A **Git** repository with at least two commits
-- An **OpenAI API key** (GPT-3.5 or GPT-4)
+- A **Gemini API key** (GPT-3.5 or GPT-4)
 
 ---
 
@@ -33,9 +33,9 @@ Dev Logger AI is a lightweight CLI tool that watches your Git development activi
    ```bash
    npm install
    ```
-3. Create a `.env` file in the root directory and add your OpenAI API key:
+3. Create a `.env` file in the root directory and add your Gemini API key:
    ```env
-   OPENAI_API_KEY=your_api_key_here
+   GEMINI_API_KEY=your_api_key_here
    ```
 4. Ensure `.env` is listed in `.gitignore` to keep your key private.
 
@@ -53,7 +53,7 @@ npm run devlog
 
 This command:
 1. Reads `git diff HEAD~1 HEAD`.
-2. Sends the diff to OpenAI for summarization.
+2. Sends the diff to Gemini for summarization.
 3. Appends the summary under a timestamp in `devlog/YYYY-MM-DD.md`.
 
 ### Custom Diff Ranges
@@ -77,7 +77,7 @@ devlog/
 ├── src/
 │   ├── index.js      # CLI entry point
 │   ├── gitReader.js  # Git diff retrieval
-│   ├── aiClient.js   # OpenAI interaction
+│   ├── aiClient.js   # Gemini interaction
 │   └── logger.js     # File output management
 ├── devlog/           # Generated daily logs (YYYY-MM-DD.md)
 ├── .env              # Environment variables (ignored by Git)

@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devlog": "node src/index.js"
-
+    "devlog": "node src/index.js",
+    "process-logs": "node src/process-logs.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^10.0.0"
+  }
 }

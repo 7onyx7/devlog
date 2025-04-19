@@ -3,9 +3,9 @@ const util = require('util');
 
 const execAsync = util.promisify(exec);
 
-async function getGitDiff() {
+async function getGitDiff(range = 'HEAD~1 HEAD') {
     try {
-        const { stdout, stderr } = await execAsync('git diff HEAD~1 HEAD');
+        const { stdout, stderr } = await execAsync(`git diff ${range}`);
 
         if (stderr) {
             console.error('Git diff error:', stderr);
